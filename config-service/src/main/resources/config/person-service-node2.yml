@@ -1,0 +1,64 @@
+server:
+  email: satish@gmail.com
+  port: 9091
+logging:
+  level:
+    .: error
+    org.springframework: DEBUG
+    com.accela.exerciese.personapi.services: DEBUG
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+
+
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+
+
+---
+server:
+  email: satish@gmail.com
+  port: 9091
+
+spring:
+  profiles: dev
+  application:
+    name: person-service
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+      url: jdbc:h2:mem:testdb
+      username: sa
+      password:
+      driverClassName: org.h2.Driver
+
+
+ribbon:
+  ServerListRefreshInterval: 1000
+
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+---
+
+spring:
+  profiles: prod
+server:
+  email: satish@gmail.com
+  cluster:
+
+
+
+
