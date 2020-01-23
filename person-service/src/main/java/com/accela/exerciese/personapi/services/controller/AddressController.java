@@ -12,10 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
-@RequestMapping(value="/v1")
+@RequestMapping(value = "/v1")
 @EnableAutoConfiguration
 @Slf4j
 public class AddressController {
@@ -26,28 +25,30 @@ public class AddressController {
 
     @PostMapping("/persons/{person_id}/address")
     private int saveAddress(@PathVariable("person_id") int id, @RequestBody Address address) throws ResourceNotFoundException {
-        addressService.saveOrUpdate(id,address);
+        addressService.saveOrUpdate(id, address);
         return address.getId();
     }
 
     @GetMapping("/persons/{person_id}/address")
     private Page<Address> getAllPersonAddress(@PathVariable("person_id") int id, Pageable pageable) {
-        return addressService.getAllAddress(id,pageable);
+        return addressService.getAllAddress(id, pageable);
     }
 
     @GetMapping("/persons/{person_id}/address/{address_id}")
     private Address getAllPersonAddress(@PathVariable("person_id") int person_id, @PathVariable("address_id") int address_id) {
         return addressService.getAddressById(address_id);
     }
+
     @PutMapping("/persons/{person_id}/address/{address_id}")
-    public Address updateAddress(@PathVariable (value = "person_id") int person_id,
-                                 @PathVariable (value = "address_id") int address_id,
+    public Address updateAddress(@PathVariable(value = "person_id") int person_id,
+                                 @PathVariable(value = "address_id") int address_id,
                                  @Valid @RequestBody Address address) throws ResourceNotFoundException {
-        return addressService.updateAddress(person_id,address_id,address);
+        return addressService.updateAddress(person_id, address_id, address);
     }
+
     @DeleteMapping("/posts/{person_id}/comments/{address_id}")
-    public ResponseEntity<?> deleteComment(@PathVariable (value = "person_id") int person_id,
-                                           @PathVariable (value = "address_id") int address_id) throws ResourceNotFoundException {
-        return addressService.deleteAddress(person_id,address_id);
+    public ResponseEntity<?> deleteComment(@PathVariable(value = "person_id") int person_id,
+                                           @PathVariable(value = "address_id") int address_id) throws ResourceNotFoundException {
+        return addressService.deleteAddress(person_id, address_id);
     }
 }

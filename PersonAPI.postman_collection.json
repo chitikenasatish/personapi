@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "0261ef44-7ae4-463a-a1e4-d880142d7977",
+		"name": "PersonAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/v1/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON GET ALL PERSONS JSON",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/v1/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON GET ALL PERSONS XML",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/v1/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1Above-all18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test-sync-user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \t\t\"firstname\":\"satish\",\n    \t\t\"lastname\":\"chitikena\",\n    \t\t\"email\":\"satish.chitikena@gmail.com\",\n    \t\t\"age\":35\n    \t}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons"
+					]
+				},
+				"description": "dd"
+			},
+			"response": []
+		},
+		{
+			"name": "update Person",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1Above-all18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test-sync-user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \t\t\"firstname\":\"satish_updated\",\n    \t\t\"lastname\":\"chitikena\",\n    \t\t\"email\":\"satish.chitikena@gmail.com\",\n    \t\t\"age\":35\n    \t}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/persons/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons",
+						"1"
+					]
+				},
+				"description": "dd"
+			},
+			"response": []
+		},
+		{
+			"name": "create Address",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1Above-all18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test-sync-user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \t\t\"street\":\"irongate\",\n    \t\t\"city\":\"collierville\",\n    \t\t\"state\":\"TN\",\n    \t\t\"postalCode\":\"38017\"\n    \t}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/persons/1/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons",
+						"1",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Address",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1Above-all18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test-sync-user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \t\t\"street\":\"irongateCTN\",\n    \t\t\"city\":\"collierville\",\n    \t\t\"state\":\"TN\",\n    \t\t\"postalCode\":\"38017\"\n    \t}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/persons/1/address/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons",
+						"1",
+						"address",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address with Pagination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1Above-all18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test-sync-user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"street\":\"irongate ct\",\n     \"city\":33,\n    \"state\":\"dd\",\n    \"postalCode\": \"38017\"\n    \n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/persons/1/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons",
+						"1",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address with AddressID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1Above-all18",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test-sync-user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"street\":\"irongate ct\",\n     \"city\":33,\n    \"state\":\"dd\",\n    \"postalCode\": \"38017\"\n    \n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/v1/persons/1/address/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"v1",
+						"persons",
+						"1",
+						"address",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

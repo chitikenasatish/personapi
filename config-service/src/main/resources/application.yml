@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-service
+  profiles:
+    active: composite
+  cloud:
+    config:
+      server:
+        composite:
+          - type: native
+            search-locations: file://${user.home}/config-service
+        bootstrap: true

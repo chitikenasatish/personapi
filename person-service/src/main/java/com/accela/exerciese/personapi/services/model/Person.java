@@ -1,11 +1,12 @@
 package com.accela.exerciese.personapi.services.model;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import lombok.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Data

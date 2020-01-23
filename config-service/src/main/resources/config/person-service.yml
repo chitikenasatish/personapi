@@ -1,11 +1,9 @@
 server:
   email: satish@gmail.com
-  port: 9090
+  port: 8091
 logging:
-  level:
-    .: error
-    org.springframework: DEBUG
-    com.accela.exerciese.personapi.services: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
 
 
 eureka:
@@ -24,7 +22,7 @@ spring:
 ---
 server:
   email: satish@gmail.com
-  port: 9090
+  port: 8091
 
 spring:
   profiles: dev
@@ -35,22 +33,15 @@ spring:
       enabled: true
       path: /h2
   datasource:
-      url: jdbc:h2:mem:testdb
-      username: sa
-      password:
-      driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
 
-
-ribbon:
-  ServerListRefreshInterval: 1000
-
-endpoints:
-  health:
-    sensitive: false
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
 ---
 
 spring:

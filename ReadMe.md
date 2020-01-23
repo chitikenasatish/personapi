@@ -1,16 +1,5 @@
-
-Spring Boot & Spring Cloud for Microservices development to Build Person API
-
-    Using Spring Boot 2 in cloud-native development
-    
-    Providing service discovery for all microservices with Spring Cloud Netflix Eureka
-    
-    Distributed configuration with Spring Cloud Config
-    API Gateway pattern using a new project inside Spring Cloud: Spring Cloud Gateway
-    
-    
-    
-#  Person &A Address API Project
+ 
+##  Person & Address API Project
 
 This is a project based on Spring Boot and Spring Cloud. It is intended as a Reference not used in productin 
 
@@ -26,7 +15,7 @@ This is a project based on Spring Boot and Spring Cloud. It is intended as a Ref
 
 ## Modules
 
-The main parts of the template are:
+The main parts of the Maven multi modules are:
 
 * config-service
 * discovery-service
@@ -40,6 +29,12 @@ Go to person-service and run the maven command
     mvn clean install 
     java -jar target/person-servie*.jar
 
+## How to test . attached Postman json file . can import and run all the Services.
+
+     PersonAPI.postman_collection.json
+
+## Swagger Documentation 
+    
 ## Architecture Decision
 
 Enabling Docker Builds as well to support Kubernetes deployment . Jenkins will build the Images and push it to ACR Container registry
@@ -68,6 +63,8 @@ Evetual consistency can be achienved with primary & Secondary . Secondary only u
 * ID change from int to long or String
 * Inter process communication as i have put both address and person in the same service.
 * Kubernetes scripts , tried to create Docker images. 
+* Unit Tests . 
+
 
 
 

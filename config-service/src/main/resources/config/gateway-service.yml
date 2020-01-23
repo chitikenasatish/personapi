@@ -7,9 +7,9 @@ eureka:
       defaultZone: http://localhost:8061/eureka/
 
 logging:
-  pattern: 
+  pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
-              
+
 spring:
   cloud:
     gateway:
@@ -17,9 +17,9 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: person-service
-        uri: lb://person-service
-        predicates:
-        - Path=/person/**
-        filters:
-        - RewritePath=/person/(?<path>.*), /$\{path}
+        - id: person-service
+          uri: lb://person-service
+          predicates:
+            - Path=/person/**
+          filters:
+            - RewritePath=/person/(?<path>.*), /$\{path}

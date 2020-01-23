@@ -2,7 +2,6 @@ package com.accela.exerciese.personapi.services.service;
 
 import com.accela.exerciese.personapi.services.exception.ResourceNotFoundException;
 import com.accela.exerciese.personapi.services.model.Address;
-import com.accela.exerciese.personapi.services.model.Person;
 import com.accela.exerciese.personapi.services.repository.AddressRepository;
 import com.accela.exerciese.personapi.services.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +9,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class AddressService {
@@ -26,15 +22,17 @@ public class AddressService {
     @Autowired
     PersonRepository personRepository;
 
-    public Address saveOrUpdate(int personId , Address address) throws ResourceNotFoundException {
+    public Address saveOrUpdate(int personId, Address address) throws ResourceNotFoundException {
         return personRepository.findById(personId).map(person -> {
             address.setPerson(person);
             return addressRepository.save(address);
         }).orElseThrow(() -> new ResourceNotFoundException("Person " + personId + " not found"));
     }
-    public Page<Address> getAllAddress(int personid , Pageable pageable) {
+
+    public Page<Address> getAllAddress(int personid, Pageable pageable) {
         return addressRepository.findByPersonId(personid, pageable);
     }
+
     public Address getAddressById(int id) {
         return addressRepository.findById(id).get();
     }
@@ -42,7 +40,7 @@ public class AddressService {
     public Address updateAddress(int person_id,
                                  int address_id,
                                  @Valid @RequestBody Address address) throws ResourceNotFoundException {
-        if(!personRepository.existsById(person_id)) {
+        if (!personRepository.existsById(person_id)) {
             throw new ResourceNotFoundException("Person  " + person_id + " not found");
         }
 
