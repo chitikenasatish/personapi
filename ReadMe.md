@@ -37,14 +37,15 @@ Go to person-service and run the maven command
     
 ## Architecture Decision
 
-Enabling Docker Builds as well to support Kubernetes deployment . Jenkins will build the Images and push it to ACR Container registry
-Better to use Spring Cloud Kubernetes service instead of Spring Eureka and Config service .
-Spring Kubernetes can help to to replace Config service with Config Map and Secret password and configuration will be distributed.
-Ingress instead of ZUUL API gateway to delegate to required service and provide authentication at GATEWAY level.
-Inter service communication Resttemplate 
+* Enabling Docker Builds as well to support Kubernetes deployment . 
+* Jenkins will build the Images and push it to ACR Container registry
+* Better to use Spring Cloud Kubernetes service instead of Spring Eureka and Config service .
+* Spring Kubernetes can help to to replace Config service with Config Map and Secret password and configuration will be distributed.
+* Ingress instead of ZUUL API gateway to delegate to required service and provide authentication at GATEWAY level.
+* Inter service communication Resttemplate 
 
-Primary & Secondary for the SQL Database , MY SQL can be used. Writes needs to be always sent to primary .
-Evetual consistency can be achienved with primary & Secondary . Secondary only used for reads.
+* Primary & Secondary for the SQL Database , MY SQL can be used. Writes needs to be always sent to primary .
+* Evetual consistency can be achienved with primary & Secondary . Secondary only used for reads.
 
 ## High level architecture diagram
 
