@@ -32,6 +32,7 @@ Go to person-service and run the maven command
 ## How to test . attached Postman json file . can import and run all the Services.
 
      PersonAPI.postman_collection.json
+     https://github.com/chitikenasatish/personapi/blob/master/PersonAPI.postman_collection.json
 
 ## Swagger Documentation 
     
