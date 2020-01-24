@@ -25,7 +25,7 @@ The main parts of the Maven multi modules are:
 
 ## How to build
 Go to person-service and run the maven command
-
+    cd person-service
     mvn clean install 
     java -jar target/person-servie*.jar
 
