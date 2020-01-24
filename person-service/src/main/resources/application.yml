@@ -1,0 +1,46 @@
+server:
+  email: satish@gmail.com
+  port: 8091
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+
+
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+
+
+---
+server:
+  email: satish@gmail.com
+  port: 8091
+
+spring:
+  profiles: dev
+  application:
+    name: person-service
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+---
+
+spring:
+  profiles: prod
+server:
+  email: satish@gmail.com
+  cluster:
+
+
+
+
