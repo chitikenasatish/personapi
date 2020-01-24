@@ -30,6 +30,7 @@ Go to person-service and run the maven command
     java -jar target/person-servie*.jar
 
 ## How to test . attached Postman json file . can import and run all the Services.
+    Note - Please change port number in POST request based on your local server availability.
 
      PersonAPI.postman_collection.json
 
